@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel=icon href="images/bmr.png" sizes="16x16" type="images/png">
+    <title>Basal Metabolic Rate (BMR) Calculator</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Parth Chandgadhiya">
+  </head>
+
+  <body>   
+      <main>
+        <div>
+          <form method="post" onsubmit="return false;">
+              <br/>
+              <h1>Calculator Type</h1><br />
+              <select name="Calculator" id="CalcType" onchange="ChangeCalcType()">
+                <option value>Select Calc Type</option>
+                <option value="Imperial" id ="Imperial">Imperial</option>
+                <option value="Metric" id ="Metric">Metric</option>
+              </select><br/><br/>
+            <div id="Imperial_Calc_Fields" style="display:none">
+              <h1>Gender</h1> <br />
+                <select name="Gender" id="Imp_Gender">
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select><br /><br />
+                <h1>Age</h1><br />
+                <input type="number" name="Age" min ="1" max="122" id ="Imp_Age" placeholder="What is your Age?"><br />
+                <h1>Your Height</h1><br />
+              <input type="number" name="inches" min ="22" id="inches" max="107" placeholder="Inches"><br />
+              <h1>Your Weight</h1><br />
+              <input type="number" name="pound" min ="5"id="pounds" max="1400" placeholder="Pounds"><br />       
+
+              <h1>Select your activity level:</h1>
+              <h2>
+              <input type="radio" name="Bmp_ActivityLevel" value="little" id="little">I am  sedentary (little or no exercise)<br />
+              <input type="radio" name="Bmp_ActivityLevel" value="light" id="little">I am lightly active (light exercise or sports 1-3 days per week)<br />
+              <input type="radio" name="Bmp_ActivityLevel" value="moderate" id="medium">I am moderately active (moderate exercise or sports 3-5 days per week)<br />
+              <input type="radio" name="Bmp_ActivityLevel" value="hard" id="medium">I am very active (hard exercise or sports 6-7 days per week)<br />
+              <input type="radio" name="Bmp_ActivityLevel" value="vhard" id="hard">I am super active (very hard exercuse or sports and a physical job or 2x training)<br /><br/>
+              </h2>
+              <button type="submit" id="CalculateBmrMetricBtn" name="Calculate BMR" value="Calculate BMR" onclick="CalculateImperial()">Calculate BMR</button><br/>
+            </div>
+
+            <div id="Metric_Calc_Fields" style="display:none">
+                <h1>Gender</h1> <br />
+                <select name="Gender" id='Bmp_Gender'>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select><br />
+                <h1>Age</h1><br />
+                <input type="number" name="Age" min ="1" max="122" id ="Bmp_Age"><br />
+                <h1>Your Height</h1><br />
+                <input type="number" name="cm" min ="54" max="245" id ="H_Cm" placeholder="Centimetre"><br />
+                <h1>Your Weight</h1><br />
+                <input type="number" name="Kg" min ="15" max="635" id ="W_K" placeholder="Kilogram"><br />
+                <h1>Select your activity level:</h1>
+                <h2>
+                <input type="radio" name="Imp_ActivityLevel" value="little" id="little">I am  sedentary (little or no exercise)<br />
+                <input type="radio" name="Imp_ActivityLevel" value="light" id="little">I am lightly active (light exercise or sports 1-3 days per week)<br />
+                <input type="radio" name="Imp_ActivityLevel" value="moderate" id="medium">I am moderately active (moderate exercise or sports 3-5 days per week)<br />
+                <input type="radio" name="Imp_ActivityLevel" value="hard" id="medium">I am very active (hard exercise or sports 6-7 days per week)<br />
+                <input type="radio" name="Imp_ActivityLevel" value="vhard" id="hard">I am super active (very hard exercuse or sports and a physical job or 2x training)<br /><br/>          
+                </h2>
+                <button type="submit" id="CalculateImperialBtn" name="Calculate BMR" value="Calculate BMR" onclick="CalculateBmpMetric()">Calculate BMR</button><br/>
+              </div>  
+			<p id="demo"></p>
+		  </form>
+		</div>
+      </main>
+    <script src="js/application.js"></script>
+  </body>
+
+</html>
